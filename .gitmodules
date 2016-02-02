@@ -1,3 +1,6 @@
 [submodule "org-mode"]
 	path = org-mode
 	url = git://orgmode.org/org-mode.git
+[submodule "molokai-theme"]
+	path = molokai-theme
+	url = https://github.com/hbin/molokai-theme

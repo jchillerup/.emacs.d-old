@@ -1,2 +1,15 @@
 url/
 auto-save-list/
+*.elc
+
+# emacs temp files
+*~
+.#*
+
+# the package repository
+elpa/
+
+# session files
+.emacs.desktop
+.emacs.desktop.lock
+eshell
