@@ -32,4 +32,23 @@
 (load-theme 'molokai t)
 
 ;; Start maximized
-(run-with-idle-timer 0.1 nil 'toggle-frame-maximized)
+;; (run-with-idle-timer 0.1 nil 'toggle-frame-maximized)
+
+;; Define sudo-edit that lets you edit the currently open file
+;; as root.
+(defun sudo-edit (&optional arg)
+  "Edit currently visited file as root.
+
+With a prefix ARG prompt for a file to visit.
+Will also prompt for a file to visit if current
+buffer is not visiting a file."
+  (interactive "P")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo:root@localhost:"
+                         (ido-read-file-name "Find file(as root): ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+
+;; Define some more TODO states
+(setq org-todo-keywords
+      '((sequence "TODO" "DOING" "WAITING" "|" "DONE")))
