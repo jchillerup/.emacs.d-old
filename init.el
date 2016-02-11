@@ -52,3 +52,7 @@ buffer is not visiting a file."
 ;; Define some more TODO states
 (setq org-todo-keywords
       '((sequence "TODO" "DOING" "WAITING" "|" "DONE")))
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
